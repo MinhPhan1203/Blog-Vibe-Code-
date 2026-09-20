@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#eff1f5" />
+    <meta
+      name="description"
+      content="The personal corner of Phan Sơn Bảo Minh. Student, gamer and amateur developer in Hà Nội."
+    />
+    <title>MinhPhan · Home</title>
+    <link rel="icon" href="assets/images/favicon.jpg" />
+    <!-- Áp dụng màu đã lưu trước khi vẽ trang để tránh nháy màu. -->
+    <script>
+      try {
+        document.documentElement.dataset.theme =
+          localStorage.getItem('minh-theme') ||
+          (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      } catch {}
+    </script>
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <!-- Điều hướng chung và nút chuyển sáng/tối. -->
+    <header class="header">
+      <a class="brand" href="index.html">minhphan</a>
+      <nav id="navigation" aria-label="Main navigation">
+        <a class="active" href="index.html">Home</a>
+        <a href="index.html#about">About</a>
+        <a class="" href="blog/index.html">Blog</a>
+        <a href="index.html#connect">Connect</a>
+      </nav>
+      <div class="header-actions">
+        <button
+          class="theme-toggle"
+          aria-label="Switch color theme"
+          title="Switch color theme"
+        >
+          <span class="theme-name">Latte</span>
+        </button>
+        <button
+          class="menu-toggle"
+          aria-label="Open navigation"
+          aria-controls="navigation"
+          aria-expanded="false"
+        >
+          <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        </button>
+      </div>
+    </header>
+    <!-- Nội dung chính của trang. -->
+    <main id="main">
+      <section class="hero">
+        <div class="hero-copy">
+          <div class="eyebrow">A LITTLE CORNER OF THE INTERNET</div>
+          <h1>
+            Hello, I'm
+            <br />
+            <span class="name">Minh</span>
+          </h1>
+          <p class="hero-description">
+            A student, a gamer, and an amateur developer.
+            <br />
+            Curious about technology. Always learning.
+          </p>
+          <div class="hero-buttons">
+            <a class="button primary" href="#about">Get to know me</a>
+            <a class="button secondary" href="blog/index.html">Read my blog</a>
+          </div>
+          <div class="location">
+            Hà Nội, Việt Nam
+            <span class="location-line"></span>
+            Nice to meet you!
+          </div>
+        </div>
+        <!-- Ảnh GIF dùng trong trang chủ Blog-main. -->
+        <figure class="original-hero">
+          <img src="assets/images/home.gif" alt="" />
+          <figcaption>LET'S BEGING</figcaption>
+        </figure>
+      </section>
+      <!-- Dải sở thích: hai nhóm giống nhau giúp vòng lặp nối liền. -->
+      <div class="interest-strip">
+        <div class="interest-window">
+          <div class="interest-track">
+            <div class="interest-group">
+              <span>STUDENT</span>
+              <span class="interest-separator" aria-hidden="true">·</span>
+              <span>GAMER</span>
+              <span class="interest-separator" aria-hidden="true">·</span>
+              <span>AMATEUR DEVELOPER</span>
+              <span class="interest-separator" aria-hidden="true">·</span>
+              <span>PHOTOGRAPHY ENTHUSIAST</span>
+              <span class="interest-separator" aria-hidden="true">·</span>
+            </div>
+            <!-- Bản sao trang trí, ẩn với trình đọc màn hình. -->
+            <div class="interest-group" aria-hidden="true">
+              <span>STUDENT</span>
+              <span class="interest-separator" aria-hidden="true">·</span>
+              <span>GAMER</span>
+              <span class="interest-separator" aria-hidden="true">·</span>
+              <span>AMATEUR DEVELOPER</span>
+              <span class="interest-separator" aria-hidden="true">·</span>
+              <span>PHOTOGRAPHY ENTHUSIAST</span>
+              <span class="interest-separator" aria-hidden="true">·</span>
+            </div>
+          </div>
+        </div>
+        <button
+          class="marquee-toggle"
+          type="button"
+          aria-label="Pause scrolling interests"
+          aria-pressed="false"
+          title="Pause scrolling interests"
+        >
+          Pause
+        </button>
+      </div>
+      <section id="about" class="section">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">01 / ABOUT ME</div>
+            <h2>
+              A little more
+              <em>about me.</em>
+            </h2>
+          </div>
+          <p>The person behind the screen.</p>
+        </div>
+        <div class="about-grid">
+          <article class="card intro-card">
+            <h3>Phan Sơn Bảo Minh</h3>
+            <p>
+              My full name is Phan Sơn Bảo Minh. I live at
+              <a
+                href="https://vi.wikipedia.org/wiki/%C4%90%C3%B4ng_Anh_(huy%E1%BB%87n)"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Kim Chung, Đông Anh, Hà Nội
+              </a>
+              (now know as
+              <a
+                href="https://thienloc.hanoi.gov.vn/gioi-thieu-chung/gioi-thieu-ve-xa-thien-loc-thanh-pho-ha-noi-2786250628183225264.htm"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Thiên Lộc, Hà Nội</a>). I'm a
+              <strong>Student</strong>
+              ,
+              <strong>Gamer</strong>
+              and
+              <strong>Amateur Developer</strong>
+              now.
+            </p>
+            <div class="pills">
+              <span>Student</span>
+              <span>Gamer</span>
+              <span>Amateur Developer</span>
+            </div>
+          </article>
+          <article class="card education-card">
+            <div class="card-top">
+              <span class="small-label">THE JOURNEY SO FAR</span>
+            </div>
+            <h3>Always a student.</h3>
+            <div class="timeline">
+              <div>
+                <span class="small-label">2026 — NOW</span>
+                <p>
+                  And now i am a student at
+                  <a
+                    href="https://humg.edu.vn/Pages/home.aspx"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Hanoi University of Mining and Geology
+                  </a>
+                  (2026-now).
+                </p>
+              </div>
+              <div>
+                <span class="small-label">2023 — 2026</span>
+                <p>
+                  I was a student at
+                  <a
+                    href="http://thptbacthanglong.edu.vn/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Bac Thang Long HighSchool
+                  </a>
+                  (2023-2026).
+                </p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="section">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">02 / THINGS I ENJOY</div>
+            <h2>
+              Beyond the
+              <em>keyboard.</em>
+            </h2>
+          </div>
+          <p>A few things that make me, me.</p>
+        </div>
+        <div class="hobbies">
+          <article class="card hobby-card peach">
+            <span class="hobby-icon" aria-hidden="true">⌘</span>
+            <h3>Play. Listen. Repeat.</h3>
+            <p>
+              My favorite game is
+              <strong>TFT (TeamFight Tactics)</strong>
+              ,
+              <strong>AOV (Arena Of Valor)</strong>
+              . And my favorite sport is
+              <a
+                href="https://en.wikipedia.org/wiki/Badminton"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Badminton
+              </a>
+              . Sometimes i have listening music, my favorite singers, band is
+              <a
+                href="https://www.youtube.com/channel/UClchAbzC31CNcNcBfjbSCUA"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Lil Liem
+              </a>
+              and
+              <a
+                href="https://www.youtube.com/channel/UCuKWFCkVDNzcFy5JGeJFrOw"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Ngot
+              </a>
+              .
+            </p>
+            <div class="pills">
+              <span>TFT</span>
+              <span>Arena of Valor</span>
+              <span>Badminton</span>
+            </div>
+          </article>
+          <article class="card hobby-card blue">
+            <span class="hobby-icon" aria-hidden="true">◎</span>
+            <h3>Life through a lens.</h3>
+            <p>
+              Also I learn about
+              <strong>photograph</strong>
+              . Do you know about DSLR camera? My favorite brand about camera is
+              <a
+                href="https://en.wikipedia.org/wiki/Canon_EOS"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Canon
+              </a>
+              and
+              <a
+                href="https://en.wikipedia.org/wiki/Fujifilm"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Fujiflim
+              </a>
+              . Some Canon DSLR I know is
+              <a
+                href="https://en.wikipedia.org/wiki/Canon_EOS_5D_Mark_IV"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Canon EOS 5D Mark IV
+              </a>
+              ,
+              <a
+                href="https://en.wikipedia.org/wiki/Canon_EOS_600D"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Canon EOS 600D
+              </a>
+              and
+              <a
+                href="https://en.wikipedia.org/wiki/Canon_EOS_6D_Mark_II"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Canon EOS 6D Mark II
+              </a>
+            </p>
+            <div class="pills">
+              <span>Canon</span>
+              <span>Fujifilm</span>
+              <span>DSLR</span>
+            </div>
+          </article>
+          <article class="card hobby-card green">
+            <span class="hobby-icon" aria-hidden="true">&gt;_</span>
+            <h3>Endlessly curious.</h3>
+            <p>
+              I'm very interested in technology. I learn about
+              <a
+                href="https://www.home-assistant.io/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Home Assistant
+              </a>
+              , and my Linux distro is
+              <a href="https://archlinux.org/" target="_blank" rel="noopener noreferrer">
+                Arch
+              </a>
+              and
+              <a
+                href="https://cachyos.org/about/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                CachyOS
+              </a>
+              .
+            </p>
+            <div class="pills">
+              <span>Linux</span>
+              <span>Home Assistant</span>
+              <span>Open source</span>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="section">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">03 / THE BLOG</div>
+            <h2>
+              Notes along
+              <em>the way.</em>
+            </h2>
+          </div>
+          <a class="text-link" href="blog/index.html">All posts</a>
+        </div>
+        <a class="featured-post" href="blog/blog1/index.html">
+          <img class="post-image" src="assets/images/blog-1.gif" alt="" loading="lazy" />
+          <div class="post-content">
+            <div class="eyebrow">
+              BLOG #1
+              <span>·</span>
+              MY CODING JOURNEY
+            </div>
+            <h3>
+              How I learned
+              <br />
+              to code.
+            </h3>
+            <p>
+              I'm excited to share with you how i got started with coding and web
+              development.
+            </p>
+            <span class="read-link">Read the story</span>
+          </div>
+        </a>
+      </section>
+      <section id="connect" class="connect section">
+        <div>
+          <div class="eyebrow">04 / SAY HELLO</div>
+          <h2>
+            Let's
+            <em>connect.</em>
+          </h2>
+          <p>Find me around the internet.</p>
+        </div>
+        <div class="socials">
+          <a
+            href="https://www.facebook.com/psbminhh/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fa-brands fa-square-facebook" aria-hidden="true"></i>
+            Facebook
+          </a>
+          <a
+            href="https://github.com/MinhPhan1203"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fa-brands fa-square-github" aria-hidden="true"></i>
+            GitHub
+          </a>
+          <a
+            href="https://www.instagram.com/psbminhhh/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fa-brands fa-square-instagram" aria-hidden="true"></i>
+            Instagram
+          </a>
+          <a
+            href="https://discord.com/users/926098921338593320"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fa-brands fa-discord" aria-hidden="true"></i>
+            Discord
+          </a>
+        </div>
+      </section>
+      <div class="update">
+        Last update: 27/08/2026
+
+        <span>A little Catppuccin, a lot of me.</span>
+      </div>
+    </main>
+    <!-- Chân trang. -->
+    <footer>
+      <a class="brand" href="index.html">minhphan</a>
+      <p>
+        <i class="fa-solid fa-copyright" aria-hidden="true"></i>
+        Copyright 2025 MinhPhan. All Rights Reserved.
+      </p>
+      <a href="#main">Back to top</a>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#eff1f5" />
+    <meta
+      name="description"
+      content="The personal corner of Phan Sơn Bảo Minh. Student, gamer and amateur developer in Hà Nội."
+    />
+    <title>MinhPhan · Blog</title>
+    <link rel="icon" href="../assets/images/favicon.jpg" />
+    <!-- Áp dụng màu đã lưu trước khi vẽ trang để tránh nháy màu. -->
+    <script>
+      try {
+        document.documentElement.dataset.theme =
+          localStorage.getItem('minh-theme') ||
+          (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      } catch {}
+    </script>
+    <link rel="stylesheet" href="../assets/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="../style.css" />
+    <script src="../main.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <!-- Điều hướng chung và nút chuyển sáng/tối. -->
+    <header class="header">
+      <a class="brand" href="../index.html">minhphan</a>
+      <nav id="navigation" aria-label="Main navigation">
+        <a class="" href="../index.html">Home</a>
+        <a href="../index.html#about">About</a>
+        <a class="active" href="../blog/index.html">Blog</a>
+        <a href="../index.html#connect">Connect</a>
+      </nav>
+      <div class="header-actions">
+        <button
+          class="theme-toggle"
+          aria-label="Switch color theme"
+          title="Switch color theme"
+        >
+          <span class="theme-name">Latte</span>
+        </button>
+        <button
+          class="menu-toggle"
+          aria-label="Open navigation"
+          aria-controls="navigation"
+          aria-expanded="false"
+        >
+          <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        </button>
+      </div>
+    </header>
+    <!-- Nội dung chính của trang. -->
+    <main id="main">
+      <section class="section blog-page">
+        <a class="text-link" href="../index.html">
+          <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+          Back home
+        </a>
+        <div class="eyebrow">THE BLOG</div>
+        <h1>
+          Notes along
+          <br />
+          <em>the way.</em>
+        </h1>
+        <p class="page-description">Learning, creating, and sharing what I discover.</p>
+        <a class="featured-post" href="blog1/index.html">
+          <img
+            class="post-image"
+            src="../assets/images/blog-1.gif"
+            alt=""
+            loading="lazy"
+          />
+          <div class="post-content">
+            <div class="eyebrow">
+              BLOG #1
+              <span>·</span>
+              MY CODING JOURNEY
+            </div>
+            <h3>
+              How I learned
+              <br />
+              to code.
+            </h3>
+            <p>
+              I'm excited to share with you how i got started with coding and web
+              development.
+            </p>
+            <span class="read-link">Read the story</span>
+          </div>
+        </a>
+        <div class="upcoming">
+          <article class="card">
+            <img
+              class="upcoming-image"
+              src="../assets/images/blog-2.gif"
+              alt=""
+              loading="lazy"
+            />
+            <span class="small-label">BLOG #2</span>
+            <h3>Coming soon.</h3>
+            <p>A new story is on its way.</p>
+            <span class="coming-tag">Not published yet</span>
+          </article>
+          <article class="card">
+            <span class="small-label">BLOG #3</span>
+            <h3>Coming soon.</h3>
+            <p>A new story is on its way.</p>
+            <span class="coming-tag">Not published yet</span>
+          </article>
+          <!-- <article class="card">
+            <span class="small-label">BLOG #4</span>
+            <h3>Coming soon.</h3>
+            <p>A new story is on its way.</p>
+            <span class="coming-tag">Not published yet</span>
+          </article>
+          <article class="card">
+            <span class="small-label">BLOG #5</span>
+            <h3>Coming soon.</h3>
+            <p>A new story is on its way.</p>
+            <span class="coming-tag">Not published yet</span>
+          </article>
+          <article class="card">
+            <span class="small-label">BLOG #6</span>
+            <h3>Coming soon.</h3>
+            <p>A new story is on its way.</p>
+            <span class="coming-tag">Not published yet</span>
+          </article> -->
+        </div>
+      </section>
+    </main>
+    <!-- Chân trang. -->
+    <footer>
+      <a class="brand" href="../index.html">minhphan</a>
+      <p>
+        <i class="fa-solid fa-copyright" aria-hidden="true"></i>
+        Copyright 2025 MinhPhan. All Rights Reserved.
+      </p>
+      <a href="#main">Back to top</a>
+    </footer>
+  </body>
+</html>

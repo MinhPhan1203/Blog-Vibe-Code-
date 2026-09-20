@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#eff1f5" />
+    <meta
+      name="description"
+      content="The personal corner of Phan Sơn Bảo Minh. Student, gamer and amateur developer in Hà Nội."
+    />
+    <title>MinhPhan · How I Learned To Code</title>
+    <link rel="icon" href="../../assets/images/favicon.jpg" />
+    <!-- Áp dụng màu đã lưu trước khi vẽ trang để tránh nháy màu. -->
+    <script>
+      try {
+        document.documentElement.dataset.theme =
+          localStorage.getItem('minh-theme') ||
+          (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      } catch {}
+    </script>
+    <link rel="stylesheet" href="../../assets/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="../../style.css" />
+    <script src="../../main.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <!-- Điều hướng chung và nút chuyển sáng/tối. -->
+    <header class="header">
+      <a class="brand" href="../../index.html">minhphan</a>
+      <nav id="navigation" aria-label="Main navigation">
+        <a class="" href="../../index.html">Home</a>
+        <a href="../../index.html#about">About</a>
+        <a class="active" href="../../blog/index.html">Blog</a>
+        <a href="../../index.html#connect">Connect</a>
+      </nav>
+      <div class="header-actions">
+        <button
+          class="theme-toggle"
+          aria-label="Switch color theme"
+          title="Switch color theme"
+        >
+          <span class="theme-name">Latte</span>
+        </button>
+        <button
+          class="menu-toggle"
+          aria-label="Open navigation"
+          aria-controls="navigation"
+          aria-expanded="false"
+        >
+          <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        </button>
+      </div>
+    </header>
+    <!-- Nội dung chính của trang. -->
+    <main id="main">
+      <article class="article section">
+        <a class="text-link" href="../index.html">
+          <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+          All posts
+        </a>
+        <div class="eyebrow">BLOG #1 / MY CODING JOURNEY</div>
+        <h1>
+          How I learned
+          <br />
+          <em>to code.</em>
+        </h1>
+        <div class="byline">
+          <span>
+            MinhPhan
+            <br />
+            <small>Student & amateur developer</small>
+          </span>
+        </div>
+        <img class="article-image" src="../../assets/images/article-top.gif" alt="" />
+        <div class="article-body">
+          <h2>Hello, welcome to my first blog!</h2>
+          <p class="lead">
+            I'm excited to share with you how i got started with coding and web
+            development.
+          </p>
+          <p>
+            First, i will talk about my journey into coding. And you can read if you want
+            to study more about it i mean for the web development and your skills. There
+            are my experience and you can learn or read for fun. Now let's get started!
+          </p>
+          <p>
+            I started learning to code because I was fascinated by the idea of creating
+            things that could be used by others or learn about it. I have some small
+            projects under my belt now. You can check them from my github profile or dms
+            my on discord i will share you it.
+          </p>
+          <p>
+            Next you can learn code on many website like
+            <a
+              href="https://www.w3schools.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              W3Schools
+            </a>
+            ,
+            <a
+              href="https://developer.mozilla.org/en-US/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              MDN Web Docs
+            </a>
+            and
+            <a
+              href="https://www.freecodecamp.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              freeCodeCamp
+            </a>
+            . If you a Vietnamese or know about Vietnamese you can learn in
+            <a href="https://f8.edu.vn" target="_blank" rel="noopener noreferrer">
+              F8 FullStack
+            </a>
+            . You don't know how to start learning from scratch you can read it in
+            <a href="https://roadmap.sh" target="_blank" rel="noopener noreferrer">
+              Roadmap
+            </a>
+            . This website teaches you from zero to hero with a clear study plan. You can
+            start with a small project like profile card for you or a simple website. Last
+            but not least, don't forget about the command line when you're coding.
+          </p>
+          <p>
+            Towards the end, when you can read the code and understand it or logic you
+            will be able to build more complex applications. Learn more about web
+            technologies like
+            <a href="https://getbootstrap.com/" target="_blank" rel="noopener noreferrer">
+              Bootstrap
+            </a>
+            ,
+            <a href="https://vuejs.org/" target="_blank" rel="noopener noreferrer">
+              Vue.js
+            </a>
+            , and
+            <a href="https://reactjs.org/" target="_blank" rel="noopener noreferrer">
+              React
+            </a>
+            . Database like
+            <a href="https://www.mongodb.com/" target="_blank" rel="noopener noreferrer">
+              MongoDB
+            </a>
+            ,
+            <a
+              href="https://www.postgresql.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              PostgreSQL
+            </a>
+            and
+            <a href="https://www.mysql.com/" target="_blank" rel="noopener noreferrer">
+              MySQL
+            </a>
+            .
+          </p>
+          <p>
+            Finally, remember that practice is key to improving your coding skills. Don't
+            be afraid to make mistakes and learn from them.
+            <strong>Good luck!</strong>
+          </p>
+        </div>
+        <a class="button secondary" href="../index.html">
+          <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+          Back to the blog
+        </a>
+      </article>
+    </main>
+    <!-- Chân trang. -->
+    <footer>
+      <a class="brand" href="../../index.html">minhphan</a>
+      <p>
+        <i class="fa-solid fa-copyright" aria-hidden="true"></i>
+        Copyright 2025 MinhPhan. All Rights Reserved.
+      </p>
+      <a href="#main">Back to top</a>
+    </footer>
+  </body>
+</html>
