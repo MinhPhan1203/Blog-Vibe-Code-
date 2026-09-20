@@ -1109,6 +1109,20 @@ footer .brand {
 .socials .fa-brands {
   font-size: 29px;
 }
+
+/* Discord nằm trong ô vuông bo góc giống ba icon mạng xã hội còn lại. */
+.socials .discord-square {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 25px;
+  height: 25px;
+  border-radius: 4px;
+  background: var(--text);
+  color: var(--surface);
+  font-size: 18px;
+}
 .interest-separator {
   color: var(--mauve);
 }
