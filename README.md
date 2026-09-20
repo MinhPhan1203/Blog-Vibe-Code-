@@ -43,4 +43,5 @@ Dải sở thích tạm dừng khi rê chuột hoặc focus bàn phím và có n
 - Cỡ chữ, kích thước cố định và khoảng cách các phần đã tăng 5px so với giao diện trước; breakpoint và đường viền giữ nguyên. Bố cục tự xuống hàng ở màn hình nhỏ.
 
 Phần Things I enjoy sử dụng lại ba icon trang trí `⌘`, `◎`, `>_`. Bài blog #1 chỉ hiển thị GIF góc bàn máy tính ở đầu bài; GIF cuối bài đã bỏ khỏi giao diện.
-# Blog-Vibe-Code-
+
+Hero đầu trang dùng lại minh họa ban đầu bằng SVG và cửa sổ mã; GIF `home.gif` vẫn được lưu trong `assets/images` để không mất tài nguyên gốc.

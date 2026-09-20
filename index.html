@@ -76,11 +76,41 @@
             Nice to meet you!
           </div>
         </div>
-        <!-- Ảnh GIF dùng trong trang chủ Blog-main. -->
-        <figure class="original-hero">
-          <img src="assets/images/home.gif" alt="" />
-          <figcaption>LET'S BEGING</figcaption>
-        </figure>
+        <!-- Minh họa hero ban đầu: phong cảnh, mặt trời và cửa sổ mã. -->
+        <div class="hero-art" aria-label="An illustrated mountain landscape and a small code window">
+          <div class="art-label"><span class="status-dot"></span> somewhere between code &amp; curiosity</div>
+          <svg class="landscape" viewBox="0 0 520 360" fill="none" aria-hidden="true">
+            <defs>
+              <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+                <path d="M32 0H0V32" stroke="currentColor" stroke-opacity=".07" />
+              </pattern>
+            </defs>
+            <rect width="520" height="360" fill="url(#grid)" />
+            <circle cx="365" cy="113" r="49" fill="var(--yellow)" />
+            <path d="m0 280 118-156 132 161 70-73 200 123v25H0Z" fill="var(--mountain-back)" />
+            <path d="m61 201 57-77 57 70-43-19-20 15-19-10Z" fill="var(--snow)" />
+            <path d="m195 360 170-173 155 159v14" fill="var(--mountain-front)" />
+            <path d="m323 230 42-43 43 44-31-10-12 12-20-13Z" fill="var(--snow)" />
+            <path d="M0 320c105-54 160-5 255 20s191-47 265-20v40H0" fill="var(--hill)" />
+            <g stroke="var(--mauve)" stroke-width="2">
+              <path d="M69 71v18m-9-9h18M448 162v14m-7-7h14" />
+            </g>
+          </svg>
+          <div class="code-window">
+            <div class="window-bar">
+              <div class="window-dots"><i></i><i></i><i></i></div>
+              <span>about-me.js</span><span>⌘</span>
+            </div>
+            <div class="code-body">
+              <div><span class="line-no">01</span><span class="code-purple">const</span> minh = {</div>
+              <div><span class="line-no">02</span>  role: <span class="code-green">"Student"</span>,</div>
+              <div><span class="line-no">03</span>  loves: [<span class="code-yellow">"code"</span>, <span class="code-yellow">"games"</span>],</div>
+              <div><span class="line-no">04</span>  learning: <span class="code-purple">true</span></div>
+              <div><span class="line-no">05</span>};<span class="cursor"></span></div>
+            </div>
+          </div>
+          <div class="floating-note"><span>✦</span> A work in progress. Just like me.</div>
+        </div>
       </section>
       <!-- Dải sở thích: hai nhóm giống nhau giúp vòng lặp nối liền. -->
       <div class="interest-strip">
@@ -410,7 +440,7 @@
             rel="noopener noreferrer"
           >
             <i class="fa-brands fa-discord discord-square" aria-hidden="true"></i>
-            Discord
+            Discordc
           </a>
         </div>
       </section>
