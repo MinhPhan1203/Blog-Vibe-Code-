@@ -1,0 +1,1216 @@
+/* 01. BẢNG MÀU VÀ THIẾT LẬP CHUNG */
+:root {
+  color-scheme: light;
+  --paper: #ffced8;
+  --white: #fffefa;
+  --ink: #344a3c;
+  --muted: #687264;
+  --line: #d9b9bd;
+  --pink: #f4e5e1;
+  --rose: #a86269;
+  --green: #47634c;
+  --serif: Georgia, 'Times New Roman', serif;
+  --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font: 20px/1.7 var(--sans);
+}
+button,
+input {
+  font: inherit;
+}
+button,
+a,
+input {
+  -webkit-tap-highlight-color: transparent;
+}
+button {
+  cursor: pointer;
+}
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button,
+a,
+input {
+  outline-offset: 5px;
+}
+:focus-visible {
+  outline: 2px solid var(--rose);
+}
+h1,
+h2,
+p {
+  margin: 0;
+}
+h1,
+h2 {
+  font-family: var(--serif);
+  font-weight: 400;
+}
+h1 {
+  font-size: clamp(45px, calc(4.6vw + 5px), 70px);
+  line-height: 1.17;
+  letter-spacing: -2px;
+}
+h1 em {
+  color: var(--rose);
+  font-weight: 400;
+}
+h2 {
+  font-size: 34px;
+  letter-spacing: -0.8px;
+  line-height: 1.3;
+}
+[hidden] {
+  display: none !important;
+}
+::selection {
+  color: var(--ink);
+  background: #f0d3cc;
+}
+.skip-link {
+  position: fixed;
+  top: -80px;
+  left: 20px;
+  padding: 12px;
+  background: var(--white);
+  z-index: 20;
+}
+.skip-link:focus {
+  top: 10px;
+}
+
+/* 02. HEADER, ĐIỀU HƯỚNG VÀ CHÂN TRANG */
+.site-header {
+  max-width: 1256px;
+  min-height: 104px;
+  margin: auto;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.wordmark {
+  display: flex;
+  align-items: center;
+  font: 32px var(--serif);
+  letter-spacing: -0.8px;
+}
+.wordmark > span:first-child {
+  color: var(--rose);
+  font-size: 39px;
+  margin-right: 10px;
+}
+.brand-dot {
+  color: var(--rose);
+}
+.header-note {
+  font-size: 14px;
+  letter-spacing: 2.2px;
+  color: var(--muted);
+}
+.date-badge {
+  font: 27px var(--serif);
+  letter-spacing: 2px;
+}
+.date-badge span {
+  color: #bcc0ae;
+  padding-inline: 5px;
+}
+main {
+  max-width: 1170px;
+  margin: auto;
+}
+.steps {
+  display: flex;
+  justify-content: center;
+  padding-block: 35px 0;
+}
+.steps ol {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.steps li {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #9a9e91;
+  font-size: 16px;
+}
+.steps li + li:before {
+  content: '';
+  display: block;
+  height: 1px;
+  width: 58px;
+  background: var(--line);
+  margin-inline: 21px;
+}
+.steps li > span {
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  width: 27px;
+  height: 27px;
+  font-size: 15px;
+}
+.steps li[aria-current] {
+  color: var(--ink);
+}
+.steps li[aria-current] > span {
+  color: var(--white);
+  background: var(--green);
+  border-color: var(--green);
+}
+.steps li.complete > span {
+  background: #e6ebdf;
+  color: var(--green);
+  border-color: #e6ebdf;
+}
+.step-panel {
+  animation: arrive 0.6s ease both;
+}
+.site-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 1256px;
+  margin: 20px auto 0;
+  padding: 26px 0;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 15px;
+}
+.site-footer > span {
+  font-size: 13px;
+  letter-spacing: 1.6px;
+}
+.site-footer p span {
+  color: var(--rose);
+  font-size: 19px;
+}
+
+/* 03. BƯỚC 1 — NHẬP TÊN VÀ CHỌN ẢNH */
+.intro-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 105px;
+  padding: 65px 0 70px;
+  align-items: center;
+}
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  letter-spacing: 2.1px;
+  color: var(--muted);
+  font-weight: 500;
+}
+.little-line {
+  display: inline-block;
+  height: 1px;
+  width: 27px;
+  background: var(--rose);
+}
+.intro-copy h1 {
+  margin: 21px 0 24px;
+}
+.intro-description {
+  font-size: 19px;
+  color: #808474;
+  line-height: 1.95;
+}
+.intro-art {
+  position: relative;
+  height: 280px;
+  margin-top: 10px;
+}
+.intro-art:before {
+  content: '';
+  position: absolute;
+  width: 290px;
+  height: 230px;
+  left: 60px;
+  bottom: 9px;
+  background: #f2eae1;
+  border-radius: 50%;
+  opacity: 0.55;
+}
+.intro-art canvas {
+  position: absolute;
+  left: 20px;
+  top: -12px;
+  height: 290px;
+  width: 363px;
+  transform: rotate(-10deg);
+}
+.handwritten {
+  position: absolute;
+  right: -10px;
+  bottom: 35px;
+  font: italic 21px/1.6 var(--serif);
+  max-width: 150px;
+  transform: rotate(-8deg);
+  color: var(--rose);
+}
+.tiny-caption {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  color: var(--muted);
+}
+.tiny-caption > span {
+  color: var(--rose);
+  font-size: 20px;
+}
+.recipient-card {
+  position: relative;
+  background: var(--white);
+  padding: 37px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  box-shadow: 0 12px 50px #344a3c04;
+}
+.recipient-card:before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 37px;
+  width: 38px;
+  height: 3px;
+  background: #b4bea3;
+}
+.form-heading {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 20px;
+  font-size: 13px;
+  letter-spacing: 1.1px;
+  color: var(--muted);
+}
+.mini-flower {
+  color: var(--rose);
+  font-size: 28px;
+}
+.muted {
+  color: var(--muted);
+  font-size: 17px;
+  margin: 10px 0 24px;
+}
+label {
+  display: block;
+  font-size: 17px;
+  font-weight: 550;
+  margin-bottom: 8px;
+}
+label > span {
+  color: var(--rose);
+}
+input[type='text'] {
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background: var(--white);
+  width: 100%;
+  padding: 13px 14px;
+  color: var(--ink);
+  font-size: 18px;
+}
+input[type='text']::placeholder {
+  color: #a3a597;
+}
+input[type='text']:focus {
+  border-color: var(--green);
+}
+.field-hint {
+  font-size: 15px;
+  color: var(--muted);
+  margin: 7px 0 21px;
+}
+.upload-zone {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 175px;
+  border: 1px dashed #cdd2bf;
+  border-radius: 6px;
+  background: #f8f8f0;
+  transition:
+    background 0.2s,
+    border-color 0.2s;
+}
+.upload-zone:hover,
+.upload-zone.drag-over {
+  background: #f2f1e5;
+  border-color: var(--green);
+}
+.upload-zone:focus-within {
+  outline: 2px solid var(--rose);
+  outline-offset: 3px;
+}
+.upload-zone input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  z-index: 2;
+}
+.upload-placeholder {
+  display: grid;
+  justify-items: center;
+  padding: 15px;
+  font-size: 15px;
+  color: var(--muted);
+}
+.upload-placeholder strong {
+  font-size: 17px;
+  color: var(--ink);
+  margin: 5px 0 3px;
+  font-weight: 500;
+}
+.upload-symbol {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid #d9decb;
+  border-radius: 50%;
+  font-size: 27px;
+  color: var(--green);
+}
+.photo-selection {
+  padding: 13px;
+  text-align: center;
+}
+.photo-selection img {
+  display: block;
+  width: 157px;
+  height: 157px;
+  object-fit: cover;
+  border-radius: 25px;
+  margin: auto;
+}
+.photo-selection span {
+  font-size: 15px;
+  color: var(--muted);
+}
+.photo-adjustments {
+  margin-block: -9px 13px;
+}
+.photo-adjustments label {
+  font-size: 15px;
+  margin-bottom: 0;
+  color: var(--muted);
+  margin-top: 8px;
+}
+.photo-adjustments output {
+  float: right;
+  font-size: 13px;
+  font-weight: 400;
+}
+.photo-adjustments .field-hint {
+  margin-bottom: 4px;
+}
+.photo-adjustments input {
+  width: 100%;
+  accent-color: var(--green);
+}
+.button {
+  border: 1px solid transparent;
+  border-radius: 5px;
+  padding: 14px 20px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  font-size: 17px;
+  font-weight: 500;
+  min-height: 49px;
+  transition:
+    transform 0.2s,
+    background 0.2s,
+    box-shadow 0.2s;
+}
+.button:not(:disabled):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px #344a3c10;
+}
+.primary {
+  color: #fffdf5;
+  background: var(--green);
+}
+.primary:not(:disabled):hover {
+  background: #364f3c;
+}
+.secondary {
+  color: var(--ink);
+  border-color: var(--line);
+  background: var(--white);
+}
+.wide {
+  width: 100%;
+}
+.privacy-note {
+  font-size: 14px;
+  color: var(--muted);
+  text-align: center;
+  margin-top: 12px;
+}
+.privacy-note span {
+  margin-right: 5px;
+}
+.error-message {
+  color: #ad4b4f;
+  font-size: 17px;
+}
+.error-message:not(:empty) {
+  margin-bottom: 14px;
+}
+
+/* 04. BƯỚC 2 — CỬA HÀNG HOA VÀ BÓ HOA XEM TRƯỚC */
+.section-intro {
+  text-align: center;
+  margin: 45px 0 34px;
+}
+.section-intro .eyebrow {
+  justify-content: center;
+}
+.section-intro h1 {
+  font-size: 48px;
+  margin: 12px 0;
+}
+.section-intro > p:last-child {
+  color: var(--muted);
+  font-size: 18px;
+}
+.florist-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.03fr;
+  gap: 40px;
+  margin-bottom: 55px;
+  align-items: start;
+}
+.flower-shop,
+.bouquet-studio {
+  min-width: 0;
+}
+.shop-heading,
+.studio-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+.shop-heading {
+  margin-bottom: 20px;
+}
+.shop-heading h2 {
+  font-size: 31px;
+}
+.shop-heading > span {
+  font-size: 13px;
+  letter-spacing: 1.4px;
+  color: var(--muted);
+}
+.flower-palette {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.flower-item {
+  display: grid;
+  grid-template-columns: 1fr 32px;
+  position: relative;
+  border: 1px solid var(--line);
+  background: var(--white);
+  border-radius: 7px;
+  padding: 9px;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+.flower-item.selected {
+  border-color: #a3b298;
+  box-shadow: 0 0 0 1px #a3b29822;
+}
+.flower-add {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  min-width: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  text-align: left;
+}
+.flower-add:disabled {
+  opacity: 0.65;
+}
+.flower-add canvas {
+  width: 56px;
+  height: 62px;
+  flex-shrink: 0;
+}
+.flower-name {
+  display: block;
+  font: 21px/1.25 var(--serif);
+}
+.flower-meaning {
+  display: block;
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+.flower-controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+}
+.flower-quantity {
+  font-size: 15px;
+  color: var(--rose);
+  min-height: 17px;
+}
+.flower-remove {
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  background: #f2f3e9;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--green);
+}
+.flower-remove:disabled {
+  opacity: 0.25;
+}
+.flower-tip {
+  margin-top: 15px;
+  color: var(--muted);
+  font-size: 15px;
+}
+.bouquet-studio {
+  padding: 25px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: #f2f0e7;
+  position: sticky;
+  top: 20px;
+}
+.counter {
+  font-size: 16px;
+  color: var(--green);
+  background: #e4e8db;
+  padding: 4px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+.bouquet-stage {
+  position: relative;
+  margin: 8px -10px -2px;
+}
+.bouquet-stage canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.bouquet-stage > p {
+  position: absolute;
+  top: 34%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  font: italic 25px/1.6 var(--serif);
+  color: #929981;
+  text-align: center;
+  pointer-events: none;
+}
+.bouquet-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+.bouquet-summary p {
+  font-size: 16px;
+  color: var(--muted);
+}
+.text-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--rose);
+  background: none;
+  border: 0;
+  padding: 5px 0;
+  font-size: 16px;
+  white-space: nowrap;
+}
+.text-button:hover:not(:disabled) {
+  color: var(--ink);
+}
+.progress-track {
+  margin: 13px 0 22px;
+  height: 3px;
+  background: #dfdfd1;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.progress-track > span {
+  display: block;
+  width: 0;
+  height: 100%;
+  background: #9ba98b;
+  transition: width 0.25s;
+}
+.studio-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.studio-actions .button {
+  gap: 15px;
+}
+
+/* 05. BƯỚC 3 — THIỆP VÀ TẢI ẢNH PNG */
+.card-page {
+  display: grid;
+  grid-template-columns: 0.9fr 1fr;
+  gap: 95px;
+  align-items: center;
+  padding: 55px 40px 70px;
+}
+.card-side h1 {
+  font-size: 59px;
+  margin: 20px 0 23px;
+}
+.card-side > p:not(.eyebrow) {
+  font-size: 18px;
+  color: var(--muted);
+}
+#recipient-display {
+  font-weight: 600;
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+.card-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 12px;
+  margin-top: 30px;
+}
+.card-actions .button {
+  width: 100%;
+}
+.card-actions > .text-button {
+  margin-top: 5px;
+}
+.card-side .export-note {
+  font-size: 15px !important;
+  line-height: 1.9;
+  margin-top: 25px;
+}
+.card-side .download-status {
+  color: var(--green) !important;
+  margin-top: 10px;
+  font-size: 17px !important;
+}
+.card-preview-wrap {
+  position: relative;
+  min-width: 0;
+  transform: rotate(2deg);
+}
+#greeting-card {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: var(--white);
+  box-shadow: 0 16px 50px #344a3c18;
+}
+.paper-corner {
+  position: absolute;
+  height: 33px;
+  width: 95px;
+  background: #e7dfcb99;
+  z-index: 1;
+  top: -14px;
+  left: 40%;
+  transform: rotate(-8deg);
+}
+.preview-caption {
+  display: block;
+  text-align: center;
+  font: italic 19px var(--serif);
+  margin-top: 22px;
+  color: var(--rose);
+}
+
+/* Sáu chấm tròn xem trước màu nền, hỗ trợ cả chuột và bàn phím. */
+.card-color-picker {
+  min-width: 0;
+  margin: 25px 0 0;
+  padding: 14px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fffefaad;
+  text-align: center;
+  transform: rotate(-2deg);
+}
+.card-color-picker legend {
+  padding-inline: 8px;
+  font-size: 16px;
+}
+.color-swatches {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.color-option {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  cursor: pointer;
+}
+.color-option input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+.color-dot {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid #344a3c26;
+  border-radius: 50%;
+  background: var(--swatch);
+  transition: transform 0.2s;
+}
+.color-option:hover .color-dot {
+  transform: scale(1.1);
+}
+.color-option input:checked + .color-dot {
+  outline: 2px solid var(--green);
+  outline-offset: 3px;
+}
+.color-option input:checked + .color-dot::after {
+  content: '✓';
+  font-size: 17px;
+  color: #344a3c;
+}
+.color-option input:focus-visible + .color-dot {
+  box-shadow: 0 0 0 6px #a8626940;
+}
+.card-color-picker p {
+  margin-top: 7px;
+  font-size: 12px;
+  color: var(--ink);
+}
+.wish-details {
+  color: var(--muted);
+  font-size: 16px;
+  margin-top: 25px;
+}
+.wish-details summary {
+  cursor: pointer;
+}
+.wish-details p {
+  margin-top: 10px;
+}
+.noscript-note {
+  padding: 25px;
+  color: var(--rose);
+}
+@keyframes arrive {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 06. RESPONSIVE VÀ GIẢM CHUYỂN ĐỘNG */
+@media (max-width: 1340px) {
+  .site-header,
+  .site-footer {
+    margin-inline: 40px;
+  }
+  main {
+    margin-inline: 65px;
+  }
+  .intro-layout {
+    gap: 65px;
+  }
+}
+@media (max-width: 1050px) {
+  main {
+    margin-inline: 40px;
+  }
+  .intro-layout {
+    gap: 40px;
+  }
+  .intro-copy h1 {
+    font-size: 53px;
+  }
+  .recipient-card {
+    padding: 27px;
+  }
+  .handwritten {
+    right: 0;
+    bottom: 10px;
+  }
+  .tiny-caption {
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+  .intro-art canvas {
+    left: -15px;
+  }
+  .card-page {
+    gap: 45px;
+    padding-inline: 0;
+  }
+  .card-side h1 {
+    font-size: 49px;
+  }
+  .florist-layout {
+    gap: 25px;
+  }
+  .flower-add canvas {
+    width: 40px;
+    height: 50px;
+  }
+  .flower-name {
+    font-size: 20px;
+  }
+  .flower-item {
+    padding: 7px;
+  }
+  .flower-meaning {
+    font-size: 13px;
+  }
+  .bouquet-studio {
+    padding: 20px;
+  }
+  .site-footer > span {
+    display: none;
+  }
+}
+@media (max-width: 780px) {
+  .header-note {
+    display: none;
+  }
+  .intro-layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 40px 0;
+  }
+  .intro-copy {
+    text-align: center;
+  }
+  .intro-copy .eyebrow,
+  .tiny-caption {
+    justify-content: center;
+  }
+  .intro-copy h1 {
+    font-size: 59px;
+  }
+  .intro-art {
+    display: none;
+  }
+  .intro-description {
+    font-size: 18px;
+  }
+  .tiny-caption {
+    margin-top: 25px;
+    font-size: 13px;
+  }
+  .recipient-card {
+    width: min(100%, 510px);
+    margin: auto;
+    padding: 30px;
+  }
+  .florist-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .flower-add canvas {
+    width: 55px;
+    height: 60px;
+  }
+  .flower-name {
+    font-size: 23px;
+  }
+  .flower-meaning {
+    font-size: 15px;
+  }
+  .flower-item {
+    padding: 10px;
+  }
+  .bouquet-studio {
+    position: static;
+  }
+  .bouquet-stage {
+    max-width: 460px;
+    margin: auto;
+  }
+  .card-page {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding-block: 35px 50px;
+  }
+  .card-side {
+    text-align: center;
+  }
+  .card-side > .eyebrow {
+    justify-content: center;
+  }
+  .card-side h1 {
+    font-size: 52px;
+  }
+  .card-actions {
+    align-items: center;
+    max-width: 430px;
+    margin-inline: auto;
+  }
+  .card-preview-wrap {
+    width: min(90%, 460px);
+    margin: 10px auto 0;
+  }
+  .wish-details {
+    max-width: 430px;
+    margin-inline: auto;
+  }
+  .section-intro h1 {
+    font-size: 41px;
+  }
+}
+@media (max-width: 480px) {
+  main {
+    margin-inline: 22px;
+  }
+  .site-header,
+  .site-footer {
+    margin-inline: 22px;
+  }
+  .site-header {
+    min-height: 81px;
+  }
+  .wordmark {
+    font-size: 29px;
+  }
+  .wordmark > span:first-child {
+    font-size: 34px;
+  }
+  .date-badge {
+    font-size: 24px;
+  }
+  .steps {
+    padding-top: 25px;
+  }
+  .steps li {
+    font-size: 14px;
+    gap: 5px;
+  }
+  .steps li + li:before {
+    width: 17px;
+    margin-inline: 9px;
+  }
+  .steps li > span {
+    width: 23px;
+    height: 23px;
+    font-size: 14px;
+  }
+  .intro-layout {
+    padding-top: 35px;
+    gap: 27px;
+  }
+  .intro-copy h1 {
+    font-size: 48px;
+    letter-spacing: -1.7px;
+  }
+  .eyebrow {
+    font-size: 13px;
+    letter-spacing: 1.7px;
+  }
+  .intro-description {
+    font-size: 17px;
+  }
+  .desktop-break {
+    display: none;
+  }
+  .tiny-caption {
+    font-size: 12px;
+    letter-spacing: 0.9px;
+  }
+  .recipient-card {
+    padding: 24px 21px;
+  }
+  .form-heading {
+    font-size: 12px;
+    letter-spacing: 0.8px;
+    gap: 7px;
+  }
+  h2 {
+    font-size: 31px;
+  }
+  input[type='text'] {
+    font-size: 21px;
+    padding: 11px;
+  }
+  .field-hint {
+    font-size: 14px;
+  }
+  .site-footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding-block: 20px;
+    font-size: 14px;
+  }
+  .section-intro {
+    margin-block: 30px 25px;
+  }
+  .section-intro h1 {
+    font-size: 39px;
+  }
+  .section-intro > p:last-child {
+    font-size: 17px;
+  }
+  .flower-palette {
+    gap: 8px;
+  }
+  .flower-item {
+    padding: 8px 6px;
+    grid-template-columns: 1fr 25px;
+  }
+  .flower-add {
+    flex-direction: column;
+    align-items: start;
+    gap: 0;
+    padding: 0 4px;
+  }
+  .flower-add canvas {
+    width: 56px;
+    height: 58px;
+  }
+  .flower-name {
+    font-size: 22px;
+  }
+  .flower-meaning {
+    font-size: 14px;
+  }
+  .flower-controls {
+    justify-content: end;
+    padding-bottom: 5px;
+  }
+  .bouquet-studio {
+    padding: 18px;
+  }
+  .studio-heading .eyebrow {
+    font-size: 13px;
+  }
+  .studio-actions {
+    flex-wrap: wrap;
+  }
+  .studio-actions > .primary {
+    flex: 1;
+    min-width: 155px;
+  }
+  .studio-actions > .secondary {
+    padding-inline: 13px;
+  }
+  .bouquet-stage > p {
+    font-size: 22px;
+  }
+  .card-side h1 {
+    font-size: 48px;
+  }
+  .card-preview-wrap {
+    width: 95%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *:before,
+  *:after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Chữ lớn hơn: chia đều ba bước trên màn hình điện thoại. */
+@media (max-width: 480px) {
+  .site-header {
+    flex-wrap: wrap;
+    padding-block: 15px;
+    row-gap: 8px;
+  }
+
+  .wordmark {
+    max-width: 100%;
+  }
+
+  .date-badge {
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+
+  .steps ol {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    width: 100%;
+  }
+
+  .steps li {
+    flex-direction: column;
+    text-align: center;
+    justify-content: start;
+    min-width: 0;
+    line-height: 1.5;
+  }
+
+  .steps li + li::before {
+    display: none;
+  }
+
+  .studio-actions .button {
+    flex: 1 1 100%;
+  }
+}

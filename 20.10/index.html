@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#FFCED8" />
+    <meta
+      name="description"
+      content="Tự tay chọn một bó hoa và tạo thiệp 20/10 dành tặng người phụ nữ bạn yêu thương."
+    />
+    <title>Ngàn yêu thương · 20/10</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23faf8f2'/%3E%3Ctext x='9' y='48' font-size='44'%3E🌷%3C/text%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Đến nội dung chính</a>
+    <header class="site-header">
+      <a class="wordmark" href="index.html" aria-label="Tháng mười, trang chủ">
+        ngày của phái đẹp
+        <span class="brand-dot">.</span>
+      </a>
+      <span class="header-note">DÀNH CHO NHỮNG NGƯỜI PHỤ NỮ TA THƯƠNG</span>
+      <span class="date-badge">
+        20
+        <span>/</span>
+        10
+      </span>
+    </header>
+
+    <main id="main">
+      <nav class="steps" aria-label="Các bước tạo thiệp">
+        <ol>
+          <li aria-current="step">
+            <span>01</span>
+            Mở đầu
+          </li>
+          <li>
+            <span>02</span>
+            Chọn hoa
+          </li>
+          <li>
+            <span>03</span>
+            Gửi yêu thương
+          </li>
+        </ol>
+      </nav>
+
+      <!-- BƯỚC 1: Ảnh chỉ được đọc trong trình duyệt, không gửi lên máy chủ. -->
+      <section id="step-1" class="step-panel intro-layout" aria-labelledby="intro-title">
+        <div class="intro-copy">
+          <p class="eyebrow">
+            <span class="little-line"></span>
+            NGÀY PHỤ NỮ VIỆT NAM
+          </p>
+          <h1 id="intro-title">
+            Một bó hoa,
+            <br />
+            ngàn
+            <em>yêu thương.</em>
+          </h1>
+          <p class="intro-description">
+            Có những yêu thương chẳng cần nói thành lời.
+            <br class="desktop-break" />
+            Hãy để một bó hoa và tấm thiệp nhỏ thay bạn gửi trao.
+          </p>
+          <div class="intro-art" aria-hidden="true">
+            <canvas id="intro-bouquet" width="700" height="560"></canvas>
+            <span class="handwritten">Dành tặng một người thật đặc biệt.</span>
+          </div>
+          <div class="tiny-caption">
+            <span aria-hidden="true">✦</span>
+            BẠN CHỌN HOA. CHÚNG MÌNH GÓI GHÉM YÊU THƯƠNG.
+          </div>
+        </div>
+
+        <form id="recipient-form" class="recipient-card" novalidate>
+          <div class="form-heading">
+            <span class="mini-flower" aria-hidden="true">✳</span>
+            <span>
+              MỖI TẤM THIỆP ĐỀU CÓ MỘT NGƯỜI ĐẶC BIỆT. HOẶC LÀ CHÍNH BẠN LÀ NGƯỜI ĐẶC
+              BIỆT.
+            </span>
+          </div>
+          <h2>Bó hoa này dành cho ai?</h2>
+          <p class="muted">Điền tên của bạn hoặc người bạn muốn dành tặng.</p>
+          <ll for="recipient-name">
+            Tên trên tấm thiệp
+            <span aria-hidden="true">*</span>
+          </ll>
+          <input
+            id="recipient-name"
+            name="name"
+            type="text"
+            placeholder="Ví dụ: Mẹ yêu, Bông, Nguyễn Hà…"
+            maxlength="45"
+            autocomplete="name"
+            aria-describedby="name-hint"
+            required
+          />
+          <p id="name-hint" class="field-hint">
+            Một cách gọi thân thương, tối đa 45 ký tự.
+          </p>
+
+          <label for="photo-input">
+            Một bức ảnh thật xinh
+            <span aria-hidden="true">*</span>
+          </label>
+          <div class="upload-zone" id="upload-zone">
+            <input
+              id="photo-input"
+              type="file"
+              accept="image/*"
+              aria-describedby="photo-hint"
+              required
+            />
+            <div class="upload-placeholder" id="upload-placeholder">
+              <span class="upload-symbol" aria-hidden="true">＋</span>
+              <strong>Chọn ảnh từ thiết bị</strong>
+              <span>Hoặc kéo thả ảnh vào đây</span>
+            </div>
+            <div class="photo-selection" id="photo-selection" hidden>
+              <img id="photo-preview" alt="Ảnh vuông xem trước trên thiệp" />
+              <span>Nhấn để đổi ảnh</span>
+            </div>
+          </div>
+          <p class="field-hint" id="photo-hint">Ảnh tối đa 20 MB.</p>
+          <div id="photo-adjustments" class="photo-adjustments" hidden>
+            <label for="photo-x">
+              Trục X — trái / phải
+              <output id="photo-x-value" for="photo-x">50%</output>
+            </label>
+            <input id="photo-x" type="range" min="0" max="100" value="50" />
+            <label for="photo-y">
+              Trục Y — trên / dưới
+              <output id="photo-y-value" for="photo-y">50%</output>
+            </label>
+            <input id="photo-y" type="range" min="0" max="100" value="50" />
+            <label for="photo-zoom">
+              Phóng to ảnh
+              <output id="photo-zoom-value" for="photo-zoom">100%</output>
+            </label>
+            <input
+              id="photo-zoom"
+              type="range"
+              min="100"
+              max="300"
+              step="5"
+              value="100"
+              aria-describedby="photo-adjust-hint"
+            />
+            <p id="photo-adjust-hint" class="field-hint">
+              Phóng to để căn chỉnh cả hai trục. Ảnh xem trước bo góc 25px.
+            </p>
+            <button type="button" id="reset-photo" class="text-button">
+              Căn ảnh về giữa
+            </button>
+          </div>
+          <p id="form-error" class="error-message" role="alert"></p>
+          <button class="button primary wide" id="start-button" type="submit">
+            Bắt đầu chọn hoa
+            <span aria-hidden="true">↗</span>
+          </button>
+          <p class="privacy-note">
+            <span aria-hidden="true">♧</span>
+            Ảnh ở lại trên thiết bị của bạn.
+          </p>
+        </form>
+      </section>
+
+      <!-- BƯỚC 2: Tối thiểu 10, tối đa 20 bông. Có thể chọn lặp một loại hoa. -->
+      <section id="step-2" class="step-panel" aria-labelledby="flowers-title" hidden>
+        <div class="section-intro">
+          <p class="eyebrow">MỘT CHÚT TỈ MỈ, THẬT NHIỀU YÊU THƯƠNG</p>
+          <h1 id="flowers-title" tabindex="-1">
+            Tự tay chọn
+            <em>một bó hoa.</em>
+          </h1>
+          <p>Chọn từ 10 đến 20 bông. Mỗi lần chạm là thêm một chút thương yêu.</p>
+        </div>
+        <div class="florist-layout">
+          <div class="flower-shop">
+            <div class="shop-heading">
+              <h2>Khu vườn nhỏ</h2>
+              <span id="flower-variety-count">16 LOÀI HOA</span>
+            </div>
+            <div id="flower-palette" class="flower-palette"></div>
+            <p class="flower-tip">
+              Bạn có thể chọn nhiều bông cùng loại. Nhấn dấu − để bớt một bông.
+            </p>
+          </div>
+          <div class="bouquet-studio">
+            <div class="studio-heading">
+              <span class="eyebrow">BÓ HOA CỦA BẠN</span>
+              <span id="flower-counter" class="counter">0 / 20 bông</span>
+            </div>
+            <div class="bouquet-stage">
+              <canvas
+                id="bouquet-canvas"
+                width="900"
+                height="900"
+                aria-label="Bó hoa bạn đang chọn"
+              ></canvas>
+              <p id="empty-bouquet">Một bó hoa đang chờ bạn viết nên câu chuyện…</p>
+            </div>
+            <div class="bouquet-summary">
+              <p id="bouquet-status" role="status" aria-live="polite">
+                Chọn thêm 10 bông để hoàn thành bó hoa.
+              </p>
+              <button id="clear-bouquet" type="button" class="text-button" disabled>
+                Chọn lại
+              </button>
+            </div>
+            <div class="progress-track" aria-hidden="true">
+              <span id="bouquet-progress"></span>
+            </div>
+            <div class="studio-actions">
+              <button type="button" class="button secondary" id="back-to-person">
+                ← Quay lại
+              </button>
+              <button type="button" class="button primary" id="make-card" disabled>
+                Xác nhận bó hoa
+                <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BƯỚC 3: Canvas xem trước cũng chính là ảnh PNG được tải về. -->
+      <section
+        id="step-3"
+        class="step-panel card-page"
+        aria-labelledby="card-title"
+        hidden
+      >
+        <div class="card-side">
+          <p class="eyebrow">MỘT TẤM THIỆP, TRỌN VẸN TẤM LÒNG</p>
+          <h1 id="card-title" tabindex="-1">
+            Để yêu thương
+            <br />
+            <em>được gửi trao.</em>
+          </h1>
+          <p>
+            Tấm thiệp dành riêng cho
+            <strong id="recipient-display"></strong>
+            , với bó hoa do chính bạn chọn và một lời chúc từ trái tim.
+          </p>
+          <div class="card-actions">
+            <button type="button" id="download-card" class="button primary">
+              Lưu thiệp về thiết bị
+              <span aria-hidden="true">↓</span>
+            </button>
+            <button type="button" id="change-wish" class="button secondary">
+              Đổi một lời chúc khác
+              <span aria-hidden="true">↻</span>
+            </button>
+            <button type="button" id="edit-bouquet" class="text-button">
+              ← Chỉnh lại bó hoa
+            </button>
+          </div>
+          <p
+            id="download-status"
+            class="download-status"
+            role="status"
+            aria-live="polite"
+          ></p>
+          <p class="export-note">
+            Ảnh PNG sắc nét · 1200 × 1800 px
+            <br />
+            Bạn có thể gửi ảnh qua Zalo, Messenger hoặc in thành thiệp.
+          </p>
+          <details class="wish-details">
+            <summary>Đọc lời chúc trên thiệp</summary>
+            <p id="accessible-wish"></p>
+          </details>
+        </div>
+        <div class="card-preview-wrap">
+          <div class="paper-corner" aria-hidden="true"></div>
+          <canvas
+            id="greeting-card"
+            width="1200"
+            height="1800"
+            role="img"
+            aria-label="Thiệp chúc mừng 20 tháng 10 với bó hoa, ảnh và tên của bạn"
+          ></canvas>
+          <fieldset class="card-color-picker">
+            <legend>Chọn màu nền thiệp</legend>
+            <div class="color-swatches">
+              <label class="color-option" title="#FFDDDD" style="--swatch: #ffdddd">
+                <input
+                  type="radio"
+                  name="card-color"
+                  value="#FFDDDD"
+                  aria-label="Màu #FFDDDD"
+                />
+                <span class="color-dot" aria-hidden="true"></span>
+              </label>
+              <label class="color-option" title="#ED96D7" style="--swatch: #ed96d7">
+                <input
+                  type="radio"
+                  name="card-color"
+                  value="#ED96D7"
+                  aria-label="Màu #ED96D7"
+                />
+                <span class="color-dot" aria-hidden="true"></span>
+              </label>
+              <label class="color-option" title="#F5EFE1" style="--swatch: #f5efe1">
+                <input
+                  type="radio"
+                  name="card-color"
+                  value="#F5EFE1"
+                  aria-label="Màu #F5EFE1"
+                  checked
+                />
+                <span class="color-dot" aria-hidden="true"></span>
+              </label>
+              <label class="color-option" title="#FFF5F5" style="--swatch: #fff5f5">
+                <input
+                  type="radio"
+                  name="card-color"
+                  value="#FFF5F5"
+                  aria-label="Màu #FFF5F5"
+                />
+                <span class="color-dot" aria-hidden="true"></span>
+              </label>
+              <label class="color-option" title="#F7D6D0" style="--swatch: #f7d6d0">
+                <input
+                  type="radio"
+                  name="card-color"
+                  value="#F7D6D0"
+                  aria-label="Màu #F7D6D0"
+                />
+                <span class="color-dot" aria-hidden="true"></span>
+              </label>
+              <label class="color-option" title="#E2B4BD" style="--swatch: #e2b4bd">
+                <input
+                  type="radio"
+                  name="card-color"
+                  value="#E2B4BD"
+                  aria-label="Màu #E2B4BD"
+                />
+                <span class="color-dot" aria-hidden="true"></span>
+              </label>
+            </div>
+            <p>
+              Màu đang chọn:
+              <output id="card-color-value" aria-live="polite">#F5EFE1</output>
+            </p>
+          </fieldset>
+          <span class="preview-caption">một món quà nhỏ, một niềm vui thật to.</span>
+        </div>
+      </section>
+      <noscript>
+        <p class="noscript-note">
+          Hãy bật JavaScript để chọn hoa và tạo thiệp trên thiết bị của bạn.
+        </p>
+      </noscript>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        Được gói ghém bằng một chút yêu thương
+        <span aria-hidden="true">♡</span>
+      </p>
+      <span>CHÚC MỪNG NGÀY PHỤ NỮ VIỆT NAM · 20/10</span>
+      <p>Gửi đến một nửa dịu dàng của thế giới.</p>
+    </footer>
+  </body>
+</html>
